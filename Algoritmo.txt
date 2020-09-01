@@ -1,0 +1,50 @@
+Algoritmo "questao 15"
+// 
+// Autor(a)    : Ismael Kentenich Mesquita Andrade
+// Data atual  : 26/08/2020
+Var
+ sexo, resp : caracter
+ respSIM, respNAO, mulherSIM, homemNAO, homem, i: inteiro
+ porc: real
+
+Inicio
+respSIM <- 0
+respNAO <- 0
+mulherSIM <- 0
+homemNAO <- 0
+homem <- 0
+ escreval("Códigos de sexo: F - Feminino; M - Masculino")
+ escreval("Códigos do feedback: S - Sim; N - Não")
+ para i de 1 ate 10 faca
+   escreva("Digite o sexo: ")
+   leia(sexo)
+   escreva("Digite o feedback: ")
+   leia(resp)
+  se (resp = "S") entao
+   respSIM <- respSIM + 1
+   senao
+   se (resp = "N") entao
+     respNAO <- respNAO + 1
+   fimse
+ fimse
+
+ se (resp = "S") e (sexo = "F") entao
+   mulherSIM <- mulherSIM + 1
+   senao
+   se (resp = "N") e (sexo = "M") entao
+       homemNAO <- homemNAO + 1
+   fimse
+ fimse
+   se (sexo = "M") entao
+      homem <- homem + 1
+   fimse
+ fimpara
+  porc <- (homemNAO/homem) * 100
+ 
+ escreval("Pessoas que responderam SIM: ", respSIM)
+ escreval("Pessoas que responderam NAO: ", respNAO)
+ escreval("Mulheres que responderam SIM: ", mulherSIM)
+ escreval("Porcentagem de homens que responderam NÃO entre todos os homens: ", porc, "%")
+
+
+Fimalgoritmo
